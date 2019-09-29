@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:loterias/constants/lotto_theme.dart';
 import 'package:loterias/pages/HomePage.dart';
 import 'package:loterias/pages/ResultsPage.dart';
 import 'package:admob_flutter/admob_flutter.dart';
@@ -9,24 +11,34 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+  final theme = LottoTheme();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('es')
+      ],
       debugShowCheckedModeBanner: false,
       title: 'LOTTO',
       initialRoute: '/',
       theme: ThemeData(
-        fontFamily: 'Montserrat Regular',
-        accentColor: Color.fromRGBO(217, 55, 50, 1.0),
+        fontFamily: 'Regular',
+        accentColor: theme.red,
         primaryColor: Colors.white,
-        backgroundColor: Color.fromRGBO(16, 57, 88, 1.0),
+        backgroundColor: theme.blue,
         hintColor: Colors.blueGrey[200],
         disabledColor: Colors.blueGrey[200],
         inputDecorationTheme: InputDecorationTheme(
-          hoverColor: Color.fromRGBO(217, 55, 50, 1.0),
+          hoverColor: theme.hint,
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.0),
-              borderSide: BorderSide(color: Color.fromRGBO(217, 55, 50, 1.0)),
+              borderRadius: BorderRadius.circular(0.0),
+              borderSide: BorderSide(color: theme.red),
         ),
       ),),
       routes: {

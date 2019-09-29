@@ -2,6 +2,7 @@ import 'dart:ui';
 
 class LottoTheme {
 
+  final lightBlue = Color.fromRGBO(83, 110, 217, 1.0);
   final blue = Color.fromRGBO(16, 57, 88, 1.0);
   final red = Color.fromRGBO(217, 55, 50, 1.0);
   final darkGrey = Color.fromRGBO(112, 112, 112, 1.0);

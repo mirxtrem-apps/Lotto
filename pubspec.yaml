@@ -19,8 +19,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   admob_flutter: "^0.3.1"
   font_awesome_flutter:
+  intl: any
   # android_intent: ^0.3.3+2
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,11 +68,11 @@ flutter:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-    - family: Montserrat Bold
+    - family: Bold
       fonts:
         - asset: fonts/Montserrat-Bold.ttf
           weight: 700
-    - family: Montserrat Regular
+    - family: Regular
       fonts:
         - asset: fonts/Montserrat-Regular.ttf
   #
