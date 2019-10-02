@@ -29,7 +29,7 @@ class CardChance extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Lotería de ${this.chance}',
+            '${this.chance}',
             style: TextStyle(fontFamily: 'Bold', fontSize: 20.0),
           ),
           Row(

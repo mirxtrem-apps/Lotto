@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:loterias/components/custom-card-loteria.dart';
 import 'package:loterias/constants/lotto_theme.dart';
@@ -12,7 +13,8 @@ class LoteriaView extends StatefulWidget {
 class _LoteriaViewState extends State<LoteriaView> {
   final theme = LottoTheme();
   final lotto = ResultadosLoterias();
-  final day = DateFormat('dd/MM/yyyy').format(new DateTime.now());
+  final day = new DateFormat.EEEE('es-ES').format(new DateTime.now());
+  final date = new DateFormat.yMMMd('es-ES').format(new DateTime.now());
 
   List<Map<String, dynamic>> _resultados = [];
 
@@ -24,24 +26,24 @@ class _LoteriaViewState extends State<LoteriaView> {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(5.0),
-            child: Container(),
-            // child: Row(
-            //   mainAxisAlignment: MainAxisAlignment.end,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: <Widget>[
-            //     Text(
-            //       day.toString().toUpperCase(),
-            //       style: TextStyle(color: Colors.white),
-            //     ),
-            //     SizedBox(
-            //       width: 10.0,
-            //     ),
-            //     IconButton(
-            //       icon: Icon(FontAwesomeIcons.calendarAlt, color: Colors.white),
-            //       onPressed: () {},
-            //     )
-            //   ],
-            // ),
+            // child: Container(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  '${day.toString().toUpperCase()}, ${date.toString()}',
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                IconButton(
+                  icon: Icon(FontAwesomeIcons.calendarAlt, color: Colors.white),
+                  onPressed: () {},
+                )
+              ],
+            ),
           ),
           Flexible(
             flex: 1,
