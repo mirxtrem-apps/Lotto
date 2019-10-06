@@ -13,7 +13,7 @@ class LoteriaView extends StatefulWidget {
 class _LoteriaViewState extends State<LoteriaView> {
   final theme = LottoTheme();
   final lotto = ResultadosLoterias();
-  final day = new DateFormat.EEEE('es-ES').format(new DateTime.now());
+  final day = new DateFormat.E('es-ES').format(new DateTime.now());
   final date = new DateFormat.yMMMd('es-ES').format(new DateTime.now());
 
   List<Map<String, dynamic>> _resultados = [];
