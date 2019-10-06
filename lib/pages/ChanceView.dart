@@ -22,47 +22,19 @@ class _ChanceViewState extends State<ChanceView> {
   Widget build(BuildContext context) {
     return Container(
       color: theme.blue,
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Container(),
-            // child: Row(
-            //   mainAxisAlignment: MainAxisAlignment.end,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: <Widget>[
-            //     Text(
-            //       day.toString().toUpperCase(),
-            //       style: TextStyle(color: Colors.white),
-            //     ),
-            //     SizedBox(
-            //       width: 10.0,
-            //     ),
-            //     IconButton(
-            //       icon: Icon(FontAwesomeIcons.calendarAlt, color: Colors.white),
-            //       onPressed: () {},
-            //     )
-            //   ],
-            // ),
-          ),
-          Flexible(
-            flex: 1,
-            child: ListView.builder(
-                padding: EdgeInsets.all(16.0),
-                itemCount: chance.resultadoDiario().length,
-                addAutomaticKeepAlives: false,
-                itemBuilder: (context, index) {
-                  _resultados = chance.resultadoDiario();
-                  return CardChance(
-                    context: context,
-                    chance: _resultados[index]["chance"],
-                    numero: _resultados[index]['numero'],
-                    signo: _resultados[index]['signo'],
-                  );
-                }),
-          ),
-        ],
-      ),
+      child: ListView.builder(
+          padding: EdgeInsets.all(16.0),
+          itemCount: chance.resultadoDiario().length,
+          addAutomaticKeepAlives: false,
+          itemBuilder: (context, index) {
+            _resultados = chance.resultadoDiario();
+            return CardChance(
+              context: context,
+              chance: _resultados[index]["chance"],
+              numero: _resultados[index]['numero'],
+              signo: _resultados[index]['signo'],
+            );
+          }),
     );
   }
 }

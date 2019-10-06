@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Regular',
         accentColor: theme.red,
-        primaryColor: Colors.white,
+        primaryColor: Colors.red,
         backgroundColor: theme.blue,
         hintColor: Colors.blueGrey[200],
         disabledColor: Colors.blueGrey[200],

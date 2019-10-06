@@ -9,5 +9,6 @@ class LottoTheme {
   final yellow = Color.fromRGBO(254, 214, 53, 1.0);
   final hint = Color.fromRGBO(176, 190, 197, 1.0);
   final grey = Color.fromRGBO(183, 183, 183, 1.0);
+  final white = Color.fromRGBO(255, 255, 255, 1.0);
 
 }
