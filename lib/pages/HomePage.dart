@@ -6,6 +6,7 @@ import 'package:loterias/components/custom-drawer.dart';
 import 'package:loterias/constants/lotto_theme.dart';
 import 'package:loterias/pages/ChanceView.dart';
 import 'package:loterias/pages/LoteriaView.dart';
+import 'package:loterias/providers/db_provider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -34,13 +35,19 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white, fontSize: 20, fontFamily: 'Bold'),
                 ),
                 Text(
-                  "${day.toString().toUpperCase()}, ${date.toString().toUpperCase()}",
+                  "${day.toString()}, ${date.toString()}",
                   style: TextStyle(
                       color: Colors.white, fontSize: 14, fontFamily: 'Regular'),
                 ),
               ],
             ),
             actions: <Widget>[
+              IconButton(
+                icon: Icon(FontAwesomeIcons.search, color: Colors.white),
+                onPressed: () {
+                  DBPRovider.db.getResultsByDate(date);
+                },
+              ),
               IconButton(
                 icon: Icon(FontAwesomeIcons.calendarAlt, color: Colors.white),
                 onPressed: () {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loterias/constants/lotto_theme.dart';
+import 'package:loterias/providers/db_provider.dart';
 
 class CardLoteria extends StatelessWidget {
   final theme = LottoTheme();
@@ -10,6 +11,7 @@ class CardLoteria extends StatelessWidget {
   final String numero;
   final String serie;
   final String sorteo;
+  final String fecha;
 
   CardLoteria(
       {@required this.context,
@@ -17,7 +19,8 @@ class CardLoteria extends StatelessWidget {
       @required this.premio,
       @required this.numero,
       @required this.serie,
-      @required this.sorteo});
+      @required this.sorteo,
+      @required this.fecha});
 
   @override
   Widget build(BuildContext context) {
@@ -88,35 +91,48 @@ class CardLoteria extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: <Widget>[
-              Text(
-                'Sorteo',
-                style: TextStyle(fontFamily: 'Regular'),
-              ),
-              SizedBox(
-                width: 10.0,
-              ),
-              Text(
-                this.sorteo,
-                style: TextStyle(
-                    fontFamily: 'Bold', fontSize: 24.0, color: theme.lightBlue),
-              ),
-            ],
-          ),
-          Container(
-            width: double.infinity,
-            child: FlatButton(
-              color: theme.red,
-              child: Text(
-                'SECOS',
-                style: TextStyle(fontFamily: 'Bold', color: Colors.white),
-              ),
-              onPressed: () {},
-            ),
-          ),
+          _isSorteo(),
+
+          // IMPORTANTE: EL BOTÓN DE SECOS QUEDA DESHABILITADO HASTA ACTUALIZAR LOS DATOS
+          
+          // Container(
+          //   width: double.infinity,
+          //   child: FlatButton(
+          //     color: theme.red,
+          //     child: Text(
+          //       'SECOS',
+          //       style: TextStyle(fontFamily: 'Bold', color: Colors.white),
+          //     ),
+          //     onPressed: () {
+          //       DBPRovider.db.getResultsByDate(fecha);
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );
+  }
+  // VALIDA SI EXISTE EL NÚMERO DEL SORTEO DE LO CONTRARIO NO SE MUESTRA EN LA TARJETA
+  _isSorteo() {
+    if (this.sorteo == "") {
+      return Container();
+    } else {
+      return Row(
+        children: <Widget>[
+          Text(
+            'Sorteo',
+            style: TextStyle(fontFamily: 'Regular'),
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          Text(
+            this.sorteo,
+            style: TextStyle(
+                fontFamily: 'Bold', fontSize: 24.0, color: theme.lightBlue),
+          ),
+        ],
+      );
+    }
   }
 }

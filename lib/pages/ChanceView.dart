@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:intl/intl.dart';
 import 'package:loterias/components/custom-card-chance.dart';
 
 import 'package:loterias/constants/lotto_theme.dart';
@@ -14,7 +13,6 @@ class ChanceView extends StatefulWidget {
 class _ChanceViewState extends State<ChanceView> {
   final theme = LottoTheme();
   final chance = ResultadosChance();
-  final day = DateFormat('dd/MM/yyyy').format(new DateTime.now());
 
   List<Map<String, dynamic>> _resultados = [];
 

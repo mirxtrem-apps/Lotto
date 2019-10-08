@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 import 'package:loterias/components/custom-card-loteria.dart';
 import 'package:loterias/constants/lotto_theme.dart';
 import 'package:loterias/providers/resultados-loterias.provider.dart';
@@ -12,8 +12,6 @@ class LoteriaView extends StatefulWidget {
 class _LoteriaViewState extends State<LoteriaView> {
   final theme = LottoTheme();
   final lotto = ResultadosLoterias();
-  final day = new DateFormat.E('es-ES').format(new DateTime.now());
-  final date = new DateFormat.yMMMd('es-ES').format(new DateTime.now());
 
   List<Map<String, dynamic>> _resultados = [];
 
@@ -34,6 +32,7 @@ class _LoteriaViewState extends State<LoteriaView> {
               numero: _resultados[index]['numero'],
               serie: _resultados[index]['serie'],
               sorteo: _resultados[index]['sorteo'],
+              fecha: "",
             );
           }),
     );

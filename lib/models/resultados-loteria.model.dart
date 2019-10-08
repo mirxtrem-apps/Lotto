@@ -4,35 +4,38 @@
 
 import 'dart:convert';
 
-Resultado resultadoFromJson(String str) => Resultado.fromJson(json.decode(str));
+ResultadoModel resultadoFromJson(String str) => ResultadoModel.fromJson(json.decode(str));
 
-String resultadoToJson(Resultado data) => json.encode(data.toJson());
+String resultadoToJson(ResultadoModel data) => json.encode(data.toJson());
 
 
-class Resultado {
-    String id;
-    String loteria;
+class ResultadoModel {
+    int id;
+    int loteria;
     String numero;
     String premio;
     String serie;
     String sorteo;
+    String fecha;
 
-    Resultado({
+    ResultadoModel({
         this.id,
         this.loteria,
         this.numero,
         this.premio,
         this.serie,
         this.sorteo,
+        this.fecha,
     });
 
-    factory Resultado.fromJson(Map<String, dynamic> json) => Resultado(
+    factory ResultadoModel.fromJson(Map<String, dynamic> json) => ResultadoModel(
         id: json["id"] == null ? null : json["id"],
         loteria: json["loteria"] == null ? null : json["loteria"],
         numero: json["numero"] == null ? null : json["numero"],
         premio: json["premio"] == null ? null : json["premio"],
         serie: json["serie"] == null ? null : json["serie"],
         sorteo: json["sorteo"] == null ? null : json["sorteo"],
+        fecha: json["fecha"] == null ? null : json["fecha"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -42,5 +45,6 @@ class Resultado {
         "premio": premio == null ? null : premio,
         "serie": serie == null ? null : serie,
         "sorteo": sorteo == null ? null : sorteo,
+        "fecha": fecha == null ? null : fecha,
     };
 }
