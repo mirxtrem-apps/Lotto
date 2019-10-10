@@ -27,10 +27,13 @@ class CardLoteria extends StatelessWidget {
     final width = MediaQuery.of(this.context).size.width;
 
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        color: Colors.white
+      ),
       width: width * 0.9,
       margin: EdgeInsets.only(bottom: 10.0),
       padding: EdgeInsets.all(16.0),
-      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -43,10 +46,11 @@ class CardLoteria extends StatelessWidget {
             style: TextStyle(fontFamily: 'Regular'),
           ),
           Text(
-            "${this.premio}'000.000",
+            "\$ ${this.premio}.000.000",
             style: TextStyle(
                 fontFamily: 'Bold', fontSize: 36.0, color: theme.blue),
           ),
+          SizedBox(height: 4),
           Row(
             children: <Widget>[
               Column(
@@ -62,7 +66,8 @@ class CardLoteria extends StatelessWidget {
                         fontFamily: 'Bold',
                         fontSize: 50.0,
                         color: theme.red,
-                        letterSpacing: 16.0),
+                        letterSpacing: 16.0
+                    ),
                   ),
                 ],
               ),
@@ -75,9 +80,12 @@ class CardLoteria extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Text(
-                    'Serie',
-                    style: TextStyle(fontFamily: 'Regular'),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 18),
+                    child: Text(
+                      'Serie',
+                      style: TextStyle(fontFamily: 'Regular'),
+                    ),
                   ),
                   Text(
                     this.serie,

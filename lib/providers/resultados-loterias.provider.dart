@@ -13,7 +13,7 @@ class ResultadosLoterias {
       },
       {
         "id": 1,
-        "loteria": "Boyaca",
+        "loteria": "Boyacá",
         "premio": "12.000",
         "numero": "2244",
         "serie": "279",

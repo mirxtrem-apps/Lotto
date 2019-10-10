@@ -21,10 +21,13 @@ class CardChance extends StatelessWidget {
     final width = MediaQuery.of(this.context).size.width;
 
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        color: Colors.white
+      ),
       width: width * 0.9,
       margin: EdgeInsets.only(bottom: 10.0),
       padding: EdgeInsets.all(16.0),
-      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
